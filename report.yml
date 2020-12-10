@@ -7,28 +7,14 @@
     # display the variable data type
     - debug:
         msg: 
-          - " Data type of 'ansible_architecture'  is {{ ansible_architecture | type_debug }} "
-          - " Data type of 'ansible_apparmor' is {{ ansible_apparmor | type_debug }} "
-          - " Data type of 'ansible_all_ipv4_addresses' is {{ ansible_distribution_version | type_debug }} "
-          - " Data type of 'ansible_all_ipv4_addresses' is {{ ansible_enp1s0.active | type_debug }} "
-          - " Data type of 'ansible_all_ipv4_addresses' is {{ ansible_selinux.status | type_debug }} "
-          - " Data type of 'ansible_all_ipv4_addresses' is {{ansible_selinux.type}} "          
-          - " Data type of 'ansible_all_ipv4_addresses' is {{ ansible_all_ipv4_addresses | type_debug }} "
+          - " 'Server Architechture'  is {{ ansible_architecture }} "
+          - " Server Distribution Version is {{ ansible_distribution_version }} "
+          - " 'Interface status' is {{ ansible_enp1s0.active }} "
+          - " 'SELINUX Status' is {{ ansible_selinux.status }} "
+          - " 'SELINUX Type' is {{ansible_selinux.type}} "          
+          - " 'Display IPV4 addresses' {{ ansible_all_ipv4_addresses }} "
+          - " 'Display LVM details' {{ansible_lvm}} "
 
-    # Simply printing the value of fact which is Ansible UnSafe Text type
-    - debug:
-        msg: "{{ ansible_architecture }}"
 
-    # Accessing an element of dictionary
-    - debug:
-        msg: "{{ansible_apparmor.status}}"
-
-    # Accessing the list
-    - debug:
-        msg: "{{ansible_all_ipv4_addresses}}"
-    
-    - debug:
-        msg: "{{ansible_lvm}}"
-        
 
 
