@@ -7,13 +7,15 @@
     # display the variable data type
     - debug:
         msg: 
-          - " 'Server Architechture'  is {{ ansible_architecture }} "
-          - " Server Distribution Version is {{ ansible_distribution_version }} "
-          - " 'Interface status' is {{ ansible_enp1s0.active }} "
-          - " 'SELINUX Status' is {{ ansible_selinux.status }} "
-          - " 'SELINUX Type' is {{ansible_selinux.type}} "          
-          - " 'Display IPV4 addresses' {{ ansible_all_ipv4_addresses }} "
-          - " 'Display LVM details' {{ansible_lvm}} "
+          - " -------System Report--------------"
+          - " Server Architechture : {{ ansible_architecture }} "
+          - " Server Distribution Version : {{ ansible_distribution_version }} "
+          - " Interface status : {{ ansible_enp1s0.active }} "
+          - " SELINUX Status : {{ ansible_selinux.status }} "
+          - " SELINUX Type : {{ansible_selinux.type}} "          
+          - " IPV4 address : {{ ansible_all_ipv4_addresses }} "
+          - " LVM details : {{ansible_lvm}} "
+          - " ---------------------------------"
 
 
 
