@@ -1,9 +1,8 @@
 ---
 - name: Ansible Variable Example Playbook
   hosts: all
+  gather_facts: no
   tasks:
-
-
     # display the variable data type
     - debug:
         msg: 
