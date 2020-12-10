@@ -24,6 +24,4 @@
     - debug:
         msg: "{{ansible_all_ipv4_addresses}}"
 
-    # Accessing the Second Element of the list
-    - debug:
-        msg: "{{ansible_all_ipv4_addresses[1]}}"
+
