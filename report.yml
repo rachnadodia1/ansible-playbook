@@ -1,6 +1,6 @@
 ---
 - name: Ansible Variable Example Playbook
-  hosts: app
+  hosts: all
   tasks:
 
 
