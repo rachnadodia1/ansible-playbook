@@ -2,10 +2,10 @@
 - name: Install Package
   hosts: all
   vars:
-   - package: "{{ package.split('\n') }}"
+   - packages: "{{ package.split('\n') }}"
 
   tasks:
   - name: Install package
     yum: name={{ item }} state=present
     with_items:
-     - "{{ package }}"
+     - "{{ packages }}"
