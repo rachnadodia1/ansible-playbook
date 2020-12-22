@@ -1,6 +1,7 @@
 ---
 - name: Install Package
   hosts: all
+  gather_facts: no
   vars:
    - packages: "{{ package.split('\n') }}"
 
