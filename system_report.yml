@@ -1,0 +1,28 @@
+---
+- hosts: all
+  gather_facts: no
+ 
+  tasks:
+    - name: create directory to generate and store reports
+      file:
+        path: /opt/report
+        state: directory
+      delegate_to: 192.168.40.120
+
+    - name: create a report data
+      setup:
+      delegate_to: 192.168.40.120
+      register: output
+
+    - name: copy setup output to a file                                                                                
+      copy:                                                                                              
+        content: "{{ output }}" 
+        dest: "/opt/report/f"
+        
+    - replace:
+        path: /opt/report/f
+        regexp: '\"failed\"\: false\, \"changed\"\: false\,\ '
+       
+    - name: generate report
+      shell: ansible-cmdb /opt/report > /opt/report/system-overview.$(date +%Y%m%d%H%M%S).html
+      delegate_to: 192.168.40.120
