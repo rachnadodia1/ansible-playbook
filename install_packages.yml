@@ -1,0 +1,11 @@
+---
+- name: Install Package
+  hosts: all
+  vars:
+   - package: "{{ package.split('\n') }}"
+
+  tasks:
+  - name: Install package
+    yum: name={{ item }} state=present
+    with_items:
+     - "{{ portinput }}"
