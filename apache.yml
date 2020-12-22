@@ -1,6 +1,7 @@
 ---
 - name: Enable intranet services
   hosts: all
+  gather_facts: no
   tasks:
    - name: latest version of httpd installed
      yum:
